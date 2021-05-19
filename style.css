@@ -26,6 +26,7 @@ body {
 h1 {
     /* font-family: 'Kumbh Sans'; */
     text-align: center;
+    font-size: 2.9rem;
 }
 
 .container {
@@ -40,11 +41,32 @@ h1 {
     background-color: white;
     border: none;
     border-radius: 20px;
-    width: 90%;
+    width: 87%;
+    position: relative;
 }
 
 .faq {
     padding: 25px;
+    padding-top: 100px;
+}
+
+.images {
+    position: relative;
+}
+
+#background {
+    position: absolute;
+    z-index: 1;
+    top: -130px;
+    left: 50px;
+    width: 70%;
+}
+
+#foreground {
+    position: absolute;
+    z-index: 3;
+    top: -108px;
+    left: 25px;
 }
 
 .accordion {
@@ -56,7 +78,7 @@ h1 {
     color: var(--very-dark-grayish-blue);
     margin-bottom: 15px;
     padding-bottom: 15px;
-    font-size: 1.06rem;
+    font-size: 1.08rem;
     cursor: pointer;
 }
 
@@ -80,6 +102,11 @@ p {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     transition: font-weight 1s ease-out;
+    padding-right: 2.1em;
+}
+
+.panel p {
+    color: var(--dark-grayish-blue);
 }
 
 .attribution { font-size: 11px; text-align: center; }
