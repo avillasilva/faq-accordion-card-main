@@ -2,8 +2,8 @@
 
 * {
     box-sizing: border-box;
-    /* margin: 0; */
-    /* padding: 0; */
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -20,13 +20,11 @@
 body {
     font-family: 'Kumbh Sans', sans-serif;
     color: var(--very-dark-desaturated-blue);
-    margin: 0;
 }
 
 h1 {
-    /* font-family: 'Kumbh Sans'; */
     text-align: center;
-    font-size: 2.9rem;
+    font-size: 2.8rem;
 }
 
 .container {
@@ -46,27 +44,14 @@ h1 {
 }
 
 .faq {
-    padding: 25px;
-    padding-top: 100px;
+    padding: 2em;
 }
 
 .images {
-    position: relative;
-}
-
-#background {
-    position: absolute;
-    z-index: 1;
-    top: -130px;
-    left: 50px;
-    width: 70%;
-}
-
-#foreground {
-    position: absolute;
-    z-index: 3;
-    top: -108px;
-    left: 25px;
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-position: top -10px center;
+    background-repeat: no-repeat;
+    height: 103px;
 }
 
 .accordion {
@@ -76,33 +61,34 @@ h1 {
     
     border-bottom: 1px solid var(--light-grayish-blue);
     color: var(--very-dark-grayish-blue);
-    margin-bottom: 15px;
-    padding-bottom: 15px;
+    /* margin: 1em 0; */
+    padding: 1.05em 0 1.09em 0;
+    margin: 0.25em;
     font-size: 1.08rem;
     cursor: pointer;
+}
+
+.panel {
+    display: none;
+    color: var(--very-dark-grayish-blue);
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-right: 2.5em;
 }
 
 .active {
     color: var(--very-dark-desaturated-blue);
     font-weight: 700;
     border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    /* padding-bottom: 0;
+    margin-bottom: 0; */
 }
 
 p {
-    /* margin-top: 0; */
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--light-grayish-blue);
-}
-
-.panel {
-    color: var(--very-dark-grayish-blue);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    transition: font-weight 1s ease-out;
-    padding-right: 2.1em;
+    padding-top: 0;
+    padding-bottom: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .panel p {
@@ -114,6 +100,33 @@ p {
 
 @media (min-width: 1024px) {
     .card {
-        width: 65%;
+        height: 76vh;
+        width: 67.4%;
+        display: flex;
+    }
+
+    .images, .faq {
+        width: 50%;
+    }
+
+    .faq {
+        padding: 5.7em 6em 6em 0em;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 0.9em;
+    }
+
+    .images {
+        background-image: url(images/illustration-woman-online-desktop.svg), url(images/bg-pattern-desktop.svg);
+        background-position: top 50px left -70px, top -295px left -470px;
+        background-size: 100% 75%, 186% 186%;
+    }
+
+    .accordion {
+        padding: 1.2em 0;
     }
 }

@@ -17,10 +17,10 @@
   <div class="container">
     <div class="card">
       <div class="images">
-        <img id="background" src="images/bg-pattern-desktop.svg" alt="">
-        <!-- <img src="images/bg-pattern-mobile.svg" alt=""> -->
-        <!-- <img src="images/illustration-box-desktop.svg" alt=""> -->
-        <img id="foreground" src="images/illustration-woman-online-mobile.svg" alt="">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="images/illustration-box-desktop.svg">
+          <!-- <img src="images/illustration-box-desktop.svg" alt=""> -->
+        </picture>
       </div>
 
       <div class="faq">
@@ -81,11 +81,16 @@
       acc[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
+        if (panel.style.height) {
+          panel.style.height = null;
+          panel.style.display = 'none';
+          panel.style.borderBottom = 'none';
           this.childNodes[1].style.transform = 'scaleY(1)';
         } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
+          panel.style.height = "45px";
+          panel.style.display = 'flex';
+          panel.style.alignItems = 'center';
+          panel.style.borderBottom = '1px solid var(--light-grayish-blue)';
           this.childNodes[1].style.transform = 'scaleY(-1)';
         }
         
